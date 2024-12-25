@@ -58,6 +58,27 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        app:key="exec_cmd_on_start"
+        app:title="@string/termux_terminal_exec_on_start_header">
+
+        <SwitchPreferenceCompat
+            app:key="exec_on_start"
+            app:summaryOff="@string/termux_exec_on_start_off"
+            app:summaryOn="@string/termux_exec_on_start_on"
+            app:title="@string/termux_exec_on_start_title"
+            app:disableDependentsState="false" />
+
+        <EditTextPreference
+            app:key="exec_code"
+            app:title="@string/termux_exec_code_title"
+            app:dialogTitle="@string/termux_exec_code_dialog_title"
+            app:dialogMessage="@string/termux_exec_code_dialog_message"
+            app:useSimpleSummaryProvider="true"
+            app:dependency="exec_on_start" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         app:key="dangerous"
         app:title="@string/termux_terminal_dangerous_header">
 
@@ -72,6 +93,12 @@
             app:summaryOff="@string/termux_custom_home_root_off"
             app:summaryOn="@string/termux_custom_home_root_on"
             app:title="@string/termux_custom_home_root_title" />
+
+        <SwitchPreferenceCompat
+            app:key="exec_on_start_root"
+            app:summaryOff="@string/termux_exec_on_start_root_off"
+            app:summaryOn="@string/termux_exec_on_start_root_on"
+            app:title="@string/termux_exec_on_start_root_title" />
 
     </PreferenceCategory>
 

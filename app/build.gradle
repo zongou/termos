@@ -46,21 +46,16 @@ android {
 //        implementation "com.termux:termux-am-library:v2.0.0"
     }
 
-    packagingOptions {
-        exclude 'javax/**'
-        exclude 'org/**'
-        exclude 'META-INF/**'
-    }
 
     defaultConfig {
         manifestPlaceholders TERMUX_APP_NAME: 'Termos', TERMUX_PACKAGE_NAME: 'com.termos'
         applicationId 'com.termos'
         minSdkVersion project.properties.minSdkVersion.toInteger()
         targetSdkVersion project.properties.targetSdkVersion.toInteger()
-        versionCode 23
-        versionName "2.3"
+        versionCode 24
+        versionName "2.4"
+        resourceConfigurations += ['en', 'ru', 'uk']
 
-        resConfigs "en", "ru", "uk"
         buildConfigField "String", "TERMUX_PACKAGE_VARIANT", "\"" + project.ext.packageVariant + "\"" // Used by TermuxApplication class
 
         ndk {
@@ -122,26 +117,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    lintOptions {
+    namespace 'com.termux'
+    lint {
         disable 'ProtectedPermissions'
     }
+
 
     packagingOptions {
         jniLibs {
             useLegacyPackaging true
+            excludes += ['javax/**', 'org/**', 'META-INF/**']
+        }
+        resources {
+            excludes += ['javax/**', 'org/**', 'META-INF/**']
         }
     }
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
+            def outputFileName
             if (variant.buildType.name == "debug") {
-                def abi = output.getFilter(com.android.build.OutputFile.ABI)
-                outputFileName = new File("Termos_v" + versionName + "_debug_" + (abi ? abi : "universal") + ".apk")
+                outputFileName = "Termos_v${variant.versionName}_debug.apk"
             } else if (variant.buildType.name == "release") {
-                def abi = output.getFilter(com.android.build.OutputFile.ABI)
-                outputFileName = new File("Termos_v" + versionName + "_" + (abi ? abi : "universal") + ".apk")
+                outputFileName = "Termos_v${variant.versionName}.apk"
             }
+
+            // Установка нового имени файла
+            output.outputFileName = outputFileName
         }
     }
 }
@@ -155,7 +157,7 @@ dependencies {
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+    archiveClassifier.set("sources")
 }
 
 task versionName {

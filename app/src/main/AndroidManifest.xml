@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.termux"
     android:installLocation="internalOnly">
 
     <uses-feature
@@ -43,7 +42,6 @@
         android:restoreAnyVersion="true"
         android:appCategory="productivity"
         android:banner="@drawable/banner"
-        android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/application_name"
         android:requestLegacyExternalStorage="true"

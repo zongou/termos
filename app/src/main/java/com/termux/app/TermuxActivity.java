@@ -352,6 +352,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 getPreferences().setCustomShellEnabled(false);
                 getPreferences().setUseCustomArguments(false);
                 getPreferences().setRootAsDefault(false);
+                getPreferences().setUseUserScript(false);
             } catch (Exception e) {}
         }
         super.onDestroy();

@@ -232,6 +232,19 @@ public final class TermuxPreferenceConstants {
         public static final boolean DEFAULT_VALUE_KEY_USE_CUSTOM_HOME_ROOT = false;
 
         /**
+         * Defines the key that specifies using or not user's script.
+         */
+        public static final String EXEC_USER_SCRIPT = "exec_on_start";
+        public static final boolean DEFAULT_VALUE_KEY_EXEC_USER_SCRIPT = false;
+
+        /**
+         * Defines the key that specifies using or not user's script when root.
+         */
+        public static final String EXEC_USER_SCRIPT_ROOT = "exec_on_start_root";
+        public static final boolean DEFAULT_VALUE_KEY_EXEC_USER_SCRIPT_ROOT = false;
+
+
+        /**
          * Defines the key that specifies using or not finishAndRemoveTask().
          */
         public static final String REMOVE_TASK= "remove_task";
@@ -242,6 +255,12 @@ public final class TermuxPreferenceConstants {
          */
         public static final String CUSTOM_ARGUMENTS_STRING = "custom_arguments";
         public static final String DEFAULT_VALUE_KEY_CUSTOM_ARGUMENTS_STRING = "";
+
+        /**
+         * Defines the key that specifies user script.
+         */
+        public static final String USER_SCRIPT_STRING = "exec_code";
+        public static final String DEFAULT_VALUE_KEY_USER_SCRIPT_STRING = "";
 
         /**
          * Defines the key for whether to always keep screen on.

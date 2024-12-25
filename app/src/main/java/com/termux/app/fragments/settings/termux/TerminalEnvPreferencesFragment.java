@@ -73,6 +73,12 @@ class TerminalEnvPreferencesDataStore extends PreferenceDataStore {
             case "custom_home_root":
                 mPreferences.setUseCustomHomeWhenRoot(value);
                 break;
+            case "exec_on_start":
+                mPreferences.setUseUserScript(value);
+                break;
+            case "exec_on_start_root":
+                mPreferences.setUseUserScriptRoot(value);
+                break;
             default:
                 break;
         }
@@ -93,6 +99,10 @@ class TerminalEnvPreferencesDataStore extends PreferenceDataStore {
                 return mPreferences.getUseCustomHome();
             case "custom_home_root":
                 return mPreferences.getUseCustomHomeWhenRoot();
+            case "exec_on_start":
+                return mPreferences.getUseUserScript();
+            case "exec_on_start_root":
+                return mPreferences.getUseUserScriptRoot();
             default:
                 return false;
         }
@@ -134,6 +144,13 @@ class TerminalEnvPreferencesDataStore extends PreferenceDataStore {
                 }
                 mPreferences.setCustomArgumentsString(value);
                 break;
+            case "exec_code":
+                if (value == null || value.trim().isEmpty()) {
+                    mPreferences.setUserScript("");
+                    break;
+                }
+                mPreferences.setUserScript(value);
+                break;
             default:
                 break;
         }
@@ -151,6 +168,8 @@ class TerminalEnvPreferencesDataStore extends PreferenceDataStore {
                 return mPreferences.getCustomHomeString();
             case "custom_arguments":
                 return mPreferences.getCustomArgumentsString();
+            case "exec_code":
+                return mPreferences.getUserScript();
             default:
                 break;
         }

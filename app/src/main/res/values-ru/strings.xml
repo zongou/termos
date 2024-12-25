@@ -247,6 +247,20 @@
                 <string name="termux_custom_home_dialog_message">"Пример:
 /storage/emulated/0"</string>
 
+            <!-- Execute On Start Category -->
+            <string name="termux_terminal_exec_on_start_header">Выполнить при запуске</string>
+
+                <!-- Execute User Script -->
+                <string name="termux_exec_on_start_title">Выполнить скрипт пользователя</string>
+                <string name="termux_exec_on_start_off">Не выполнять скрипт пользователя при запуске сеанса. (Стандартно)</string>
+                <string name="termux_exec_on_start_on">Выполнять скрипт пользователя при запуске сеанса.</string>
+
+                <!-- User Script -->
+                <string name="termux_exec_code_title">Пользовательский скрипт</string>
+                <string name="termux_exec_code_dialog_title">Введите код для выполнения</string>
+                <string name="termux_exec_code_dialog_message">"Пример:
+echo 'Hello World!'"</string>
+
             <!-- Dangerous Category -->
             <string name="termux_terminal_dangerous_header">Опасно</string>
 
@@ -259,6 +273,11 @@
                 <string name="termux_custom_home_root_title">$HOME при root</string>
                 <string name="termux_custom_home_root_off">Директория программы. (Стандартно)</string>
                 <string name="termux_custom_home_root_on">Использовать пользовательский путь. (Очень опасно)</string>
+
+                <!-- User Script When Root -->
+                <string name="termux_exec_on_start_root_title">Пользовательский скрипт от root</string>
+                <string name="termux_exec_on_start_root_off">Не выполнять скрипт пользователя. (Стандартно)</string>
+                <string name="termux_exec_on_start_root_on">Выполнять скрипт пользователя. (Очень опасно)</string>
 
         <!-- Terminal Other Preferences -->
         <string name="termux_terminal_other_preferences_title">Остальные настройки</string>

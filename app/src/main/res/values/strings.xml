@@ -248,6 +248,20 @@ The shell startup command will be
                 <string name="termux_custom_home_dialog_message">"Example:
 /storage/emulated/0"</string>
 
+            <!-- Execute On Start Category -->
+            <string name="termux_terminal_exec_on_start_header">Execute On Start</string>
+
+                <!-- Execute User Script -->
+                <string name="termux_exec_on_start_title">Execute The User Script</string>
+                <string name="termux_exec_on_start_off">"Don't execute user's script on session start. (Default)"</string>
+                <string name="termux_exec_on_start_on">"Execute user's script on session start."</string>
+
+                <!-- User Script -->
+                <string name="termux_exec_code_title">User Script</string>
+                <string name="termux_exec_code_dialog_title">Enter the code to execute</string>
+                <string name="termux_exec_code_dialog_message">"Example:
+echo 'Hello World!'"</string>
+
             <!-- Dangerous Category -->
             <string name="termux_terminal_dangerous_header">Dangerous</string>
 
@@ -260,6 +274,11 @@ The shell startup command will be
                 <string name="termux_custom_home_root_title">$HOME When Root</string>
                 <string name="termux_custom_home_root_off">Program directory. (Default)</string>
                 <string name="termux_custom_home_root_on">Use custom path. (Very dangerous)</string>
+
+                <!-- User Script When Root -->
+                <string name="termux_exec_on_start_root_title">User Script When Root</string>
+                <string name="termux_exec_on_start_root_off">"Do not execute user's script. (Default)"</string>
+                <string name="termux_exec_on_start_root_on">"Execute user's script. (Very dangerous)"</string>
 
         <!-- Terminal Other Preferences -->
         <string name="termux_terminal_other_preferences_title">Other Settings</string>

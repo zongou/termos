@@ -239,6 +239,22 @@ public class TermuxAppSharedPreferences extends AppSharedPreferences {
         return SharedPreferenceUtils.getBoolean(mSharedPreferences, TERMUX_APP.USE_CUSTOM_HOME_ROOT, TERMUX_APP.DEFAULT_VALUE_KEY_USE_CUSTOM_HOME_ROOT);
     }
 
+    public void setUseUserScript(boolean value) {
+        SharedPreferenceUtils.setBoolean(mSharedPreferences, TERMUX_APP.EXEC_USER_SCRIPT, value, false);
+    }
+
+    public boolean getUseUserScript() {
+        return SharedPreferenceUtils.getBoolean(mSharedPreferences, TERMUX_APP.EXEC_USER_SCRIPT, TERMUX_APP.DEFAULT_VALUE_KEY_EXEC_USER_SCRIPT);
+    }
+
+    public void setUseUserScriptRoot(boolean value) {
+        SharedPreferenceUtils.setBoolean(mSharedPreferences, TERMUX_APP.EXEC_USER_SCRIPT_ROOT, value, false);
+    }
+
+    public boolean getUseUserScriptRoot() {
+        return SharedPreferenceUtils.getBoolean(mSharedPreferences, TERMUX_APP.EXEC_USER_SCRIPT_ROOT, TERMUX_APP.DEFAULT_VALUE_KEY_EXEC_USER_SCRIPT_ROOT);
+    }
+
     public void setRemoveTask(boolean value) {
         SharedPreferenceUtils.setBoolean(mSharedPreferences, TERMUX_APP.REMOVE_TASK, value, false);
     }
@@ -277,6 +293,20 @@ public class TermuxAppSharedPreferences extends AppSharedPreferences {
 
     public void setCustomArgumentsString(String value) {
         SharedPreferenceUtils.setString(mSharedPreferences, TERMUX_APP.CUSTOM_ARGUMENTS_STRING, value, false);
+    }
+
+    public String getUserScript() {
+        String value = SharedPreferenceUtils.getString(mSharedPreferences, TERMUX_APP.USER_SCRIPT_STRING, TERMUX_APP.DEFAULT_VALUE_KEY_USER_SCRIPT_STRING, false);
+        if (value != null) {
+            value = value.replaceAll("[ \t]+$", "");
+            setUserScript(value);
+            return value;
+        }
+        return "";
+    }
+
+    public void setUserScript(String value) {
+         SharedPreferenceUtils.setString(mSharedPreferences, TERMUX_APP.USER_SCRIPT_STRING, value.replaceAll("[ \t]+$", ""), false);
     }
 
     public boolean shouldKeepScreenOn() {
