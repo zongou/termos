@@ -325,6 +325,16 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        
+        if (mIsInvalidState) return;
+
+        // Hide soft keyboard when leaving the activity
+        KeyboardUtils.hideSoftKeyboard(this, getTerminalView());
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         KeyboardUtils.disableSoftKeyboard(this, getTerminalView());

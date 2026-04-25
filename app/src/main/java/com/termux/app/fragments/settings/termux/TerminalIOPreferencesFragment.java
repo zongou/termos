@@ -72,6 +72,9 @@ class TerminalIOPreferencesDataStore extends PreferenceDataStore {
             case "double_tap_enabled":
                 mPreferences.setDoubleTapEnabled(value);
                 break;
+            case "backkey_toggle_softkeyboard":
+                mPreferences.setBackkeyToggleSoftkeyboard(value);
+            break;
             default:
                 break;
         }
@@ -94,6 +97,8 @@ class TerminalIOPreferencesDataStore extends PreferenceDataStore {
                 return mPreferences.getPinchOutEnabled();
             case "double_tap_enabled":
                 return mPreferences.getDoubleTapEnabled();
+            case "backkey_toggle_softkeyboard":
+                return mPreferences.isBackkeyToggleSoftkeyboardEnabled();
             default:
                 return false;
         }

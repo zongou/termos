@@ -154,6 +154,12 @@ public final class TermuxPreferenceConstants {
         public static final boolean DEFAULT_VALUE_KEY_VIBRATION_ENABLED = true;
 
         /**
+         * Defines the key for whether the soft keyboard will be toggle by backkey.
+         */
+        public static final String KEY_BACKKEY_TOGGLE_SOFTKEYBOARD = "backkey_toggle_softkeyboard";
+        public static final boolean DEFAULT_VALUE_KEY_BACKKEY_TOGGLE_SOFTKEYBOARD = true;
+
+        /**
          * Defines the key for whether the custom shell will be enabled.
          */
         public static final String CUSTOM_SHELL_ENABLED = "use_custom_shell";
