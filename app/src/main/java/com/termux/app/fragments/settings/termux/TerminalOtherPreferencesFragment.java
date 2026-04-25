@@ -79,7 +79,7 @@ public class TerminalOtherPreferencesFragment extends PreferenceFragmentCompat {
                 b.setMessage(R.string.termux_about_dialog_message);
                 b.setNeutralButton("Github", (dialog, id) -> {
                     try {
-                        ShareUtils.openUrl(context, "https://github.com/0991remanon/Termos");
+                        ShareUtils.openUrl(context, "https://github.com/zongou/termos");
                     } catch (Exception e) {
                     }
                 });
@@ -93,7 +93,7 @@ public class TerminalOtherPreferencesFragment extends PreferenceFragmentCompat {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://api.github.com/repos/0991remanon/Termos/releases/latest");
+                        URL url = new URL("https://api.github.com/repos/zongou/termos/releases/latest");
                         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                         connection.setRequestProperty("User-Agent", "Mozilla/5.0");
                         //connection.setRequestMethod("GET");
@@ -189,7 +189,7 @@ class TerminalOtherPreferencesDataStore extends PreferenceDataStore {
 
         switch (key) {
             case "remove_task":
-                    mPreferences.setRemoveTask(value);
+                mPreferences.setRemoveTask(value);
                 break;
 
             case "quick_exit_enabled":
