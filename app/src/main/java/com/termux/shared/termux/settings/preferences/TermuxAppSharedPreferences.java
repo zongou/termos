@@ -1,6 +1,7 @@
 package com.termux.shared.termux.settings.preferences;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

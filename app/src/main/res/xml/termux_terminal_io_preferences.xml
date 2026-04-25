@@ -52,12 +52,6 @@
             app:summaryOn="@string/termux_vibration_on"
             app:title="@string/termux_vibration_title" />
 
-        <SwitchPreferenceCompat
-            app:key="quick_exit_enabled"
-            app:summaryOff="@string/termux_quick_exit_off"
-            app:summaryOn="@string/termux_quick_exit_on"
-            app:title="@string/termux_quick_exit_title" />
-
     </PreferenceCategory>
 
 </PreferenceScreen>

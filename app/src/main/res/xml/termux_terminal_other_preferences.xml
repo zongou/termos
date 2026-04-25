@@ -1,8 +1,18 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         app:key="last"
         app:title="@string/termux_terminal_other_header">
+
+        <SwitchPreferenceCompat
+            android:id="@+id/switchPreferenceCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:key="quick_exit_enabled"
+            app:summaryOff="@string/termux_quick_exit_off"
+            app:summaryOn="@string/termux_quick_exit_on"
+            app:title="@string/termux_quick_exit_title" />
 
         <SwitchPreferenceCompat
             app:key="remove_task"

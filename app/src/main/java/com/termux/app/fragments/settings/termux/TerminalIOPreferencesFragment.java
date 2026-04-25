@@ -72,9 +72,6 @@ class TerminalIOPreferencesDataStore extends PreferenceDataStore {
             case "double_tap_enabled":
                 mPreferences.setDoubleTapEnabled(value);
                 break;
-            case "quick_exit_enabled":
-                mPreferences.setQuickExitEnabled(value);
-                break;
             default:
                 break;
         }
@@ -97,8 +94,6 @@ class TerminalIOPreferencesDataStore extends PreferenceDataStore {
                 return mPreferences.getPinchOutEnabled();
             case "double_tap_enabled":
                 return mPreferences.getDoubleTapEnabled();
-            case "quick_exit_enabled":
-                return mPreferences.getQuickExitEnabled();
             default:
                 return false;
         }

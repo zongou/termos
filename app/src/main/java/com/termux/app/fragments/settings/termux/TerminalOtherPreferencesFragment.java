@@ -191,6 +191,10 @@ class TerminalOtherPreferencesDataStore extends PreferenceDataStore {
             case "remove_task":
                     mPreferences.setRemoveTask(value);
                 break;
+
+            case "quick_exit_enabled":
+                mPreferences.setQuickExitEnabled(value);
+                break;
             default:
                 break;
         }
@@ -203,6 +207,8 @@ class TerminalOtherPreferencesDataStore extends PreferenceDataStore {
         switch (key) {
             case "remove_task":
                 return mPreferences.getRemoveTask();
+            case "quick_exit_enabled":
+                return mPreferences.getQuickExitEnabled();
             default:
                 return false;
         }

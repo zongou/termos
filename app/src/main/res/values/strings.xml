@@ -151,7 +151,7 @@ Changelog:
                 <string name="termux_vibration_on">Enabled. (Default)</string>
 
                 <!-- Quick Exit -->
-                <string name="termux_quick_exit_title">\"Exit\" Button</string>
+                <string name="termux_quick_exit_title">Exit Immediately </string>
                 <string name="termux_quick_exit_off">Terminates all sessions on long press. (Default)</string>
                 <string name="termux_quick_exit_on">When pressed, immediately terminates all sessions.</string>
 
